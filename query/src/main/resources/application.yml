@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+openai:
+  api-key: ${OPENAI_API_KEY:}
+  embedding-model: ${OPENAI_EMBEDDING_MODEL:text-embedding-3-small}
+  chat-model: ${OPENAI_CHAT_MODEL:gpt-4o-mini}
+
+s3vectors:
+  bucket: ${S3_VECTOR_BUCKET:}
+  index: ${S3_VECTOR_INDEX:chunks}
+  namespace: ${S3_VECTOR_NAMESPACE:default}
+
+rag:
+  top-k: ${RAG_TOP_K:8}
+  min-score: ${RAG_MIN_SCORE:0.25}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
